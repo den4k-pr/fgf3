@@ -239,6 +239,7 @@ p{overflow-wrap:break-word}
   box-sizing: border-box;
   cursor: pointer;
   line-height: 1;
+  animation: pulse 2s infinite ease-in-out;
 }
 
 .footer .unlock-btn {
@@ -259,6 +260,7 @@ p{overflow-wrap:break-word}
   box-sizing: border-box;
   cursor: pointer;
   line-height: 1;
+  animation: pulse 2s infinite ease-in-out;
 }
 
 
@@ -267,7 +269,6 @@ p{overflow-wrap:break-word}
 .bonus-banner {
   max-width: 600px;
   margin: 0 auto;
-  font-family: 'Arial', sans-serif;
 }
 
 /* --- ШАПКА БАНЕРА --- */
@@ -365,7 +366,8 @@ p{overflow-wrap:break-word}
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .old-price {
@@ -375,7 +377,9 @@ p{overflow-wrap:break-word}
   color: #fff;
 }
 
-
+.s6 .old-price::after{
+  display: none !important;
+}
 
 /* Лінія перекреслення старої ціни */
 .old-price::after {
@@ -400,7 +404,7 @@ p{overflow-wrap:break-word}
 .new-price {
   font-weight: 600;
   font-size: 32px;
-  color: #f17201;
+  color: #ffffff;
   line-height: 1;
 }
 
@@ -417,6 +421,8 @@ p{overflow-wrap:break-word}
 }
 
 /* Головний заголовок */
+.contacts .main-heading,
+.faq .main-heading,
 .s2 .main-heading {
   font-weight: 400;
   font-size: 46px;
@@ -771,7 +777,7 @@ p{overflow-wrap:break-word}
 
 .mainTitle {
     font-weight: 400;
-    font-size: 50px;
+    font-size: 46px;
     line-height: 110%;
     text-transform: uppercase;
     color: #000;
@@ -1083,6 +1089,11 @@ color: rgba(32, 32, 32, 0.7);
   box-sizing: border-box;
 }
 
+.contacts .main-heading,
+.faq .main-heading{
+  color: #4E4E4E;
+}
+
 /* Секція заголовка */
 .s8 .heading-wrap {
   padding: 0 0 0 24px;
@@ -1123,6 +1134,10 @@ color: rgba(32, 32, 32, 0.7);
   background: rgba(255, 255, 255, 0.32);
   width: 100%;
   box-sizing: border-box;
+}
+
+.bonus-banner .new-price{
+  animation: pulse-2 2s infinite ease-in-out;
 }
 
 .s8 .result-row:last-child {
@@ -1349,7 +1364,29 @@ background: linear-gradient(184deg, #f10707 0%, #f40082 100%);padding:14px 32px;
 @keyframes pulseEmail{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.03);opacity:.95}}
 @keyframes lightSweep{0%{left:-150%}12%,30%,100%{left:150%}}
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02); /* Легке збільшення на 5% */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
+@keyframes pulse-2 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05); /* Легке збільшення на 5% */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 /* =========================================================
    АДАПТИВ ДЛЯ MAX-WIDTH: 440px
@@ -1492,6 +1529,8 @@ background: linear-gradient(184deg, #f10707 0%, #f40082 100%);padding:14px 32px;
     width: 100vw;
     padding: 7.95vw 5.45vw;
   }
+  .contacts .main-heading,
+.faq .main-heading,
   .s2 .main-heading,
   .s2 .main-heading span {
     font-size: clamp(14px, 10.45vw, 46px);
@@ -1629,7 +1668,7 @@ background: linear-gradient(184deg, #f10707 0%, #f40082 100%);padding:14px 32px;
     font-size: clamp(14px, 4.55vw, 20px);
   }
   .mainTitle {
-    font-size: clamp(14px, 11.36vw, 50px);
+    font-size: clamp(14px, 10.45vw, 46px);
   }
   .gallery-swiper {
     padding: 0 1.14vw 0 3.41vw !important;

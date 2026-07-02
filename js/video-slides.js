@@ -11,7 +11,7 @@
     'slide13.webp': 'https://itden-cdn.b-cdn.net/3-in-1_new/slider-3/13.MP4',
     'slide16.webp': 'https://itden-cdn.b-cdn.net/3-in-1_new/slider-3/16.MP4',
     'slide17.webp': 'https://itden-cdn.b-cdn.net/3-in-1_new/slider-3/17.MP4',
-    'slide19.webp': 'https://itden-cdn.b-cdn.net/3-in-1_new/slider-3/19.MP4',
+    'slide18.webp': 'https://itden-cdn.b-cdn.net/3-in-1_new/slider-3/19.MP4',
     'slide20.webp': 'https://itden-cdn.b-cdn.net/3-in-1_new/slider-3/20.MP4'
   };
 

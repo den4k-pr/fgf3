@@ -3,15 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const minutesEl = document.getElementById('timer-minutes');
     const secondsEl = document.getElementById('timer-seconds');
 
-    const DAY_IN_MS = 24 * 60 * 60 * 1000;
+    // Змінено: тепер константа дорівнює 30 хвилинам у мілісекундах
+    const TIMER_DURATION_MS = 30 * 60 * 1000; 
 
     function getEndTime() {
-        let endTime = localStorage.getItem('eternal_countdown_end');
+        let endTime = localStorage.getItem('eternal_countdown_end23');
         const now = Date.now();
 
-        // Якщо запису немає або час у кеші вже минув, створюємо нову позначку на +24 години
+        // Якщо запису немає або час минув, створюємо нову позначку на +30 хвилин
         if (!endTime || parseInt(endTime, 10) <= now) {
-            endTime = now + DAY_IN_MS;
+            endTime = now + TIMER_DURATION_MS;
             localStorage.setItem('eternal_countdown_end', endTime);
         }
         return parseInt(endTime, 10);
@@ -25,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Перевірка на випадок завершення таймера в реальному часі
         if (diff <= 0) {
-            targetEndTime = now + DAY_IN_MS;
+            targetEndTime = now + TIMER_DURATION_MS;
             localStorage.setItem('eternal_countdown_end', targetEndTime);
-            diff = DAY_IN_MS;
+            diff = TIMER_DURATION_MS;
         }
 
         // Розрахунок годин, хвилин та секунд
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
         // Виведення результату з додаванням нулів попереду (01, 02 тощо)
-        hoursEl.textContent = String(hours).padStart(2, '0');
+        if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0'); // додано перевірку на випадок, якщо ви приберете години з HTML
         minutesEl.textContent = String(minutes).padStart(2, '0');
         secondsEl.textContent = String(seconds).padStart(2, '0');
     }
