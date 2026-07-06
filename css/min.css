@@ -149,6 +149,7 @@ p{overflow-wrap:break-word}
   position: absolute;
   right: 25px;
   bottom: -75px;
+  z-index: 9;
   border-radius: 924px;
   width: 111px;
   height: 111px;
