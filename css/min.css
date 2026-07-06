@@ -109,6 +109,8 @@ p{overflow-wrap:break-word}
   display: flex;
   flex-direction: column;
   gap: 2px;
+  max-height: 103px;
+  overflow: hidden;
 }
 
 .s1 .hl-black {
